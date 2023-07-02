@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" 
+        crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <nav>
+      <img src="images/logo.jpg" alt="logo">
+      <div class="navigation">
+        <ul>
+          <i id="menu-close" class="fa-solid fa-xmark"></i>
+          <li><a href="index.html">Home</a></li>
+          <li><a  href="about.html">About</a></li>
+          <li><a class="active" href="blog.html">Blog</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <img id="menu-btn" src="images/menu.png" alt="">
+      </div>
+    </nav>
+
+    <!-- Home -->
+
+    <section id="blog-container">
+        <div class="blogs blogpost">
+            <div class="post">
+                <img src="images/b3.jpg" alt="">
+                <h3>Scope in Programming</h3>
+                <p>The scope of an identifier name binding – an association of a name to an entity, such as a variable – 
+                    is the region of a computer program where the binding is valid: 
+                    where the name can be used to refer to the entity. Such a region is referred to as a scope block. 
+                    <br><br>
+                    Scope is the area of the program where an item (be it variable, constant, function, etc.) 
+                    that has an identifier name is recognized. In our discussion, we will 
+                    use a variable and the place within a program where the variable is defined determines its scope.
+                    <br><br>
+                    Global scope (and by extension global data storage) occurs when a variable is defined “outside of a function”. 
+                    When compiling the program it creates the storage area 
+                    for the variable within the program’s data area as part of the object code.
+                </p>
+            </div>
+
+
+            
+        </div>
+    </section>
+    <!-- footers -->
+    <footer >
+      <div class="footer-col">
+        <h3>Top Products</h3>
+        <li>Power Tools</li>
+        <li>Managed Website</li>
+        <li>Marketing Services</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <li>Blogs</li>
+        <li>About Us</li>
+        <li>Courses</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <li>Online</li>
+        <li>Google</li>
+        
+      </div>
+
+      <div class="footer-col">
+        <h3>NewsLetter</h3>
+        <p>You can trust us.We only send promo offers</p>
+        <div class="subscribe">
+          <input type="text" placeholder="Your Email Address">
+          <a href="#" class="yellow">SUBSCRIBE</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright 2023 All rights reserved</p>
+        <div class="pro-links">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        $('#menu-btn').click(function(){
+          $('nav .navigation ul').addClass('active')
+        })
+
+        $('#menu-close').click(function(){
+          $('nav .navigation ul').removeClass('active')
+        })
+        
+    </script>
+  </body>
+</html>

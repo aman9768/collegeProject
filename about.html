@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+   
+    <!-- javascript Chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.com/libraries/Chart.js"></script>
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <nav>
+      <img src="images/logo.jpg" alt="logo">
+      <div class="navigation">
+        <ul>
+          <i id="menu-close" class="fa-solid fa-xmark"></i>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login/SignUp</a></li>
+        </ul>
+        <img id="menu-btn" src="images/menu.png" alt="">
+      </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="about-home">
+      <h2>About TechShala</h2>
+    </section>
+
+    <section id="about-container">
+        <div class="about-img">
+            <img src="images/a.png" alt="">
+        </div>
+        <div class="about-text">
+            <h2>Welcome to TechShala, Enhance your skills with best online courses</h2>
+            <p>You can start and finish online course in a week for free</p>
+            <div class="about-fe">
+                <img src="images/fe1.png" alt="">
+                <div class="fe-text">
+                    <h5>50+ courses</h5>
+                    <p>you get all the courses for free</p>
+                </div>
+            </div>
+
+            <div class="about-fe">
+                <img src="images/fe2.png" alt="">
+                <div class="fe-text">
+                    <h5>Lifetime Access</h5>
+                    <p>you get all the courses for free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- features -->
+
+    <!-- <section id="features">
+      <h1>Awesome Features</h1>
+      <p>There some features</p>
+      <div class="fea-base">
+        <div class="fea-box">
+          <p>100+ online course available at your finger tip</p>
+        </div>
+
+        <div class="fea-box">
+        <i class="fa-solid fa-graduation-cap"></i>
+          <h2>Online Courses</h2>
+          <p>We provide 100% Scholarship for students who scored 90 percent in their academic</p>
+        </div>
+
+        <div class="fea-box">
+        <i class="fa-sharp fa-solid fa-award"></i>
+          <h2>Global Certificate</h2>
+          <p>We provide 100% Scholarship for students who scored 90 percent in their academic</p>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="trust">
+        <h1>Hired Companies</h1>
+       
+        <div class="trust-img">
+            <img src="images/oracle.png" alt="">
+            <img src="images/swiggy.png" alt="">
+            <img src="images/ola.png" alt="">
+            <img src="images/zomato.png" alt="">
+            <img src="images/microsoft.png" alt="">
+            <img src="images/asus.png" alt="">
+        </div>
+    </section>
+    
+
+    <!-- footers -->
+    <footer >
+      <div class="footer-col">
+        <h3>Top Products</h3>
+        <li>Power Tools</li>
+        <li>Managed Website</li>
+        <li>Marketing Services</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <li>Blogs</li>
+        <li>About Us</li>
+        <li>Courses</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <li>Online</li>
+        <li>Google</li>
+        
+      </div>
+
+      <div class="footer-col">
+        <h3>NewsLetter</h3>
+        <p>You can trust us.We only send promo offers</p>
+        <div class="subscribe">
+          <input type="text" placeholder="Your Email Address">
+          <a href="#" class="yellow">SUBSCRIBE</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright 2023 All rights reserved</p>
+        <div class="pro-links">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        $('#menu-btn').click(function(){
+          $('nav .navigation ul').addClass('active')
+        })
+
+        $('#menu-close').click(function(){
+          $('nav .navigation ul').removeClass('active')
+        })
+        
+    </script>
+
+  </body>
+</html>

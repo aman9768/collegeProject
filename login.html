@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+  </head>
+  <body>
+    <div class="login-box">
+        <h1>Login</h1>
+       
+          <form>
+            <label>Email</label>
+            <input class="email" type="text" name="email" id="login_email">
+            <label>Password</label>
+            <input class="password" type="password" placeholder="" name="password" id="login_password">
+            <input type="submit" value="submit" id="login" name="login" onclick="auth()" />
+            <!-- <button type="submit" id="login" value="submit" name="login" >Log in</button> -->
+          </form>
+          
+    </div>
+    <p class="para-2">Not have an account ? <a href="signup.html">Sign Up Here</a></p>
+
+    <script>
+      function auth(){
+        var email=document.getElementById("login_email").value;
+        var password=document.getElementById("login_password").value;
+        if(email=="aniket@gmail.com" && password=="Aniket@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else if(email=="ravi@gmail.com" && password=="Ravi@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else if(email=="aman@gmail.com" && password=="Aman@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else if(email=="rohit@gmail.com" && password=="Rohit@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else if(email=="sourav@gmail.com" && password=="sourav@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else if(email=="fouzan@gmail.com" && password=="Fouzan@123"){
+          window.location.assign("index.html")
+          alert("login success")
+        }
+        else{
+          alert("invalid ")
+          return;
+        }
+
+      }
+    </script>
+   
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      // import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      import { getAuth, signInWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAi8EY9EePZPrcOzIErvl5XGqgCV7Br9W4",
+        authDomain: "login-auth-3a6ee.firebaseapp.com",
+        projectId: "login-auth-3a6ee",
+        storageBucket: "login-auth-3a6ee.appspot.com",
+        messagingSenderId: "926862478066",
+        appId: "1:926862478066:web:fcb737f931d789b9155e6b",
+        measurementId: "G-Q5HRJLXXBC"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth=getAuth();
+
+
+      document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert(user.email+" Login successfully!!!");
+        // document.getElementById('logout').style.display = 'block';
+        
+		    // ...
+		  })
+
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(errorMessage);
+		  });	
+      
+      function redirect(){
+          window.location="index.html"
+        }
+	  });
+    
+   
+      </script>
+      
+      
+      
+  </body>
+</html>

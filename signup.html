@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <!-- css -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"  />
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+  </head>
+  <body>
+
+      <!-- <div class="form">
+        <h1>Sign Up</h1>
+        <h4>It's Free and take few minutes</h4>
+        <form action="https://formsubmit.co/aman983322@gmail.com" method="post" class="signup-box">
+
+
+          <input type="text" name="name" placeholder="name">
+          <input type="email" name="email" placeholder="email">
+          <input type="password" name="password" >
+          <input type="password" name="password">
+          <button type="submit">Submit</button>
+          <p>By clicking the sign up button, you are agree to our <br>
+            <a href="#">Terms and Condition</a> and <a href="#">Policy and Privacy</a>
+        </p>
+        <p class="para-2">Already have an account ? <a href="login.html">Login Here</a></p>
+    </form>
+  </div> -->
+        
+       
+        <h1 class="heading">Sign Up</h1>
+        <h4>It's free and only take few minutes </h4>
+        <form  method="post" class="signup-box">
+           <label1>Name</label1>
+            <input type="text" name="name" id="fname" >
+            <label1>E-mail</label1>
+            <input type="email" name="E-mail" id="email">
+            <label1 >Password</label1>
+            <input type="password" name="password" id="pass">
+            <label1 >Confirm Password</label1>
+            <input type="password" name="password" id="confirmpass">
+            <input type="submit" value="Submit" id="register" name="register">
+        </form>
+        <p>By clicking the sign up button, you are agree to our <br>
+            <a href="#">Terms and Condition</a> and <a href="#">Policy and Privacy</a>
+        </p> 
+    
+    <p class="para-2">Already have an account ? <a href="login.html">Login Here</a></p> 
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      // import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAi8EY9EePZPrcOzIErvl5XGqgCV7Br9W4",
+        authDomain: "login-auth-3a6ee.firebaseapp.com",
+        projectId: "login-auth-3a6ee",
+        storageBucket: "login-auth-3a6ee.appspot.com",
+        messagingSenderId: "926862478066",
+        appId: "1:926862478066:web:fcb737f931d789b9155e6b",
+        measurementId: "G-Q5HRJLXXBC"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth=getAuth();
+
+      // signup
+      document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("pass").value;
+		  //For new registration
+		  createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert("Registration successfully!!");
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    // ..
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+    </script>
+  </body>
+</html>
